@@ -138,3 +138,28 @@ function minimax(newBoard, player) {
 
     return moves[bestMove];
 }
+
+/* Music Playing */
+document.addEventListener('DOMContentLoaded', () => {
+    const musicControl = document.getElementById('music-control');
+    const backgroundMusic = document.getElementById('background-music');
+    let isPlaying = false;
+
+    function toggleMusic() {
+        if (isPlaying) {
+            backgroundMusic.pause();
+            musicControl.textContent = '⏸️';
+        } else {
+            backgroundMusic.play();
+            musicControl.textContent = '▶️';
+        }
+        isPlaying = !isPlaying;
+    }
+
+    backgroundMusic.addEventListener('ended', () => {
+        isPlaying = false;
+        musicControl.textContent = '⏸️';
+    });
+
+    window.toggleMusic = toggleMusic;
+});
