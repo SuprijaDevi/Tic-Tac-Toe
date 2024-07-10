@@ -178,8 +178,22 @@ function switchToTwoPlayerMode() {
     startGame();
 }
 
+/* Function to switch to two-player mode */
+function switchToTwoPlayerMode() {
+    isTwoPlayerMode = true;
+    startGame();
+    const twoPlayerButton = document.querySelector('.game-decision button:first-child');
+    const aiButton = document.querySelector('.game-decision button:last-child');
+    twoPlayerButton.classList.add('two-player-button');
+    aiButton.classList.remove('ai-button');
+}
+
 /* Function to switch to AI mode */
 function switchToAIMode() {
     isTwoPlayerMode = false;
     startGame();
+    const twoPlayerButton = document.querySelector('.game-decision button:first-child');
+    const aiButton = document.querySelector('.game-decision button:last-child');
+    aiButton.classList.add('ai-button');
+    twoPlayerButton.classList.remove('two-player-button');
 }
