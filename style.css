@@ -7,20 +7,20 @@
     align-items: center;
     justify-content: center;
     background-color: #000000;
+    font-family: cursive;
+    position: relative;
 }
 .two-player-button {
     background-color: #1E90FF;
 }
-
 .ai-button {
     background-color: #1E90FF;
 }
 h1 {
-    font-family: cursive;
     color: #fff;
 }
 .game-decision {
-    margin-top: 90px;
+    margin-top: 70px;
 }
 .game-decision button {
     font-size: 16px;
@@ -56,13 +56,13 @@ table {
 }
 .endgame {
     display: none;
-    width: 200px;
+    width: 300px;
     background-color: rgba(134, 133, 133, 0.397);
     position: absolute;
     left: 50%;
+    top: 83%;
     transform: translateX(-50%);
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 4px; 
     text-align: center;
     border-radius: 5px;
     color: white;
@@ -73,6 +73,13 @@ button {
     color: white;
     background-color: transparent;
     border: 2px solid #007BFF;
+    border-radius: 5px;
+}
+.tic-container.win-background {
+    background-image: url('assets/celebration-unscreen.gif'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
 }
 /* table tr:first-child td {
     border-top: 0;

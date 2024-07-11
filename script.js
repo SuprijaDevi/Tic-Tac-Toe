@@ -13,20 +13,21 @@ const winCombo = [
     [2, 5, 8],
     [0, 4, 8],
     [6, 4, 2],
-]
+];
 
 const cells = document.querySelectorAll('.cell');
 startGame();
 
 function startGame() {
     document.querySelector(".endgame").style.display = "none";
+    document.querySelector(".tic-container").classList.remove('win-background');
     originalBoard = Array.from(Array(9).keys());
     for (var i = 0; i < cells.length; i++) {
         cells[i].innerText = '';
         cells[i].style.removeProperty('background-color');
         cells[i].addEventListener('click', turnClick, false);
     }
-    currentPlayer = humanPlayer1; 
+    currentPlayer = humanPlayer1;
 }
 
 function turnClick(square) {
@@ -62,12 +63,13 @@ function checkWin(board, player) {
 
 function gameOver(gameWon) {
     for (let index of winCombo[gameWon.index]) {
-        document.getElementById(index).style.backgroundColor =
-            gameWon.player == humanPlayer1 ? "green" : "red";
+        document.getElementById(index).style.color =
+            gameWon.player == humanPlayer1 ? "crimson" : "#007BFF";
     }
     for (var i = 0; i < cells.length; i++) {
         cells[i].removeEventListener('click', turnClick, false);
     }
+    document.querySelector(".tic-container").classList.add('win-background'); // Add GIF background
     declareWinner(gameWon.player == humanPlayer1 ? "Player 1 Wins!" : gameWon.player == humanPlayer2 ? "Player 2 Wins!" : "AI Wins!");
 }
 
@@ -87,7 +89,7 @@ function bestSpot() {
 function checkTie() {
     if (emptySquare().length == 0) {
         for (var i = 0; i < cells.length; i++) {
-            cells[i].style.backgroundColor = "blue";
+            cells[i].style.color = "#007BFF";
             cells[i].removeEventListener('click', turnClick, false);
         }
         declareWinner("Tie Game!!");
@@ -171,12 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.toggleMusic = toggleMusic;
 });
-
-/* Function to switch to two-player mode */
-function switchToTwoPlayerMode() {
-    isTwoPlayerMode = true;
-    startGame();
-}
 
 /* Function to switch to two-player mode */
 function switchToTwoPlayerMode() {
