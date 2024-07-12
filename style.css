@@ -80,9 +80,6 @@ button {
 
 /* Responsive Styles */
 @media (max-width: 320px) and (max-width: 768px) {
-    .tic-container {
-        height: 100vh;
-    }
     td {
         height: 80px;
         width: 80px;
@@ -99,6 +96,7 @@ button {
     .endgame {
         width: 250px;
         font-size: 1.5em;
+        top: 85%;
     }
     #music-control {
         font-size: 28px;
