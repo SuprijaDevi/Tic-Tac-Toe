@@ -81,6 +81,27 @@ button {
     background-repeat: no-repeat;
     background-size: 80%;
 }
+
+/* Responsive Styles */
+@media (max-width: 320px) and (max-width: 768px) {
+    td {
+        height: 70px;
+        width: 70px;
+        font-size: 45px;
+    }
+    .game-decision button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 3px;
+    }
+    #music-control {
+        font-size: 24px;
+    }
+    .endgame {
+        width: 250px;
+        font-size: 1.5em;
+    }
+}
 /* table tr:first-child td {
     border-top: 0;
 }
